@@ -1,0 +1,240 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  position: relative;
+  background-color: #fff;
+  line-height: 1.8rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.navbar .navbar-collapse {
+  flex-grow: unset;
+  min-height: 90px;
+}
+.navbar .navbar-collapse .navbar-nav .nav-item {
+  padding: 0 1rem;
+}
+.navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
+  height: 100%;
+  width: 100%;
+}
+.navbar .navbar-collapse .navbar-nav a {
+  line-height: 90px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.navbar .navbar-collapse .telButton {
+  display: inline-block;
+  width: 175px;
+  height: 45px;
+  line-height: 45px;
+  background-color: #b61984;
+  text-align: center;
+  border-radius: 25px;
+}
+.navbar .navbar-collapse .telButton a {
+  color: #fff;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.navbar .navbar-collapse .telButton i {
+  color: #fff;
+}
+.navbar .navbar-collapse a {
+  color: #181818;
+  text-decoration: none;
+}
+.navbar .navbar-collapse a:hover {
+  color: #b61984;
+}
+
+.aboutus {
+  position: relative;
+  background-image: url(../img/yellow_top_wave_01.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+@media (max-width: 600px) {
+  .aboutus {
+    padding-top: 7rem;
+  }
+}
+@media (min-width: 600px) {
+  .aboutus {
+    padding-top: 5rem;
+  }
+}
+.aboutus .aboutInnerLeft h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #b61984;
+}
+.aboutus .aboutInnerLeft p {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 3.5rem;
+}
+.aboutus .aboutInnerRight img {
+  max-width: 100%;
+}
+
+.aboutus::after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url("../img/Violet_top_left_wave.png");
+  background-position: left bottom;
+  z-index: -1;
+}
+
+.teacherlist {
+  position: relative;
+  background-color: #dcd1f3;
+  padding-bottom: 15px;
+}
+.teacherlist .listItem {
+  z-index: 1;
+}
+.teacherlist .card {
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.5s ease 0.1s;
+  border: unset;
+  min-height: 362px;
+}
+.teacherlist .card .card-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #b61984;
+  text-transform: uppercase;
+}
+.teacherlist .card .card-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.teacherlist .card p {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+  color: #181818;
+}
+.teacherlist .card img {
+  transition: all 1s;
+}
+.teacherlist .card img:hover {
+  transform: scale(105%);
+}
+.teacherlist .card:hover {
+  box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.1);
+}
+
+.teacherlist::after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url("../img/Wave_White_bottom_right_shape_01.png");
+  background-position: left bottom;
+}
+
+.findcourse .findLeft img {
+  max-width: 100%;
+}
+.findcourse .findRight .findRightInner {
+  width: 80%;
+  margin: auto;
+  border-radius: 25px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+}
+.findcourse .findRight .findRightInner h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.findcourse .findRight .findForm {
+  max-width: 100%;
+}
+.findcourse .findRight .findForm .formItem {
+  flex: 1 0 50%;
+  max-width: 49%;
+}
+.findcourse .findRight .findForm .formItem input {
+  width: 100%;
+  border-radius: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding-left: 25px;
+}
+.findcourse .findRight .findForm .formItem i {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  color: #b61984;
+  font-size: 0.9rem;
+}
+.findcourse .findRight .findForm .iconPosition select {
+  width: 100%;
+  border-radius: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding-left: 25px;
+  height: 36px;
+}
+.findcourse .findRight .findForm .iconPosition textarea {
+  width: 100%;
+  border-radius: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding-left: 25px;
+  max-height: 90px;
+}
+.findcourse .findRight .findForm .iconPosition i {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  color: #b61984;
+  font-size: 0.9rem;
+}
+.findcourse .findRight .findForm .iconPosition i:last-of-type {
+  top: 10px;
+  left: 10px;
+  transform: unset;
+}
+.findcourse .findRight .findForm div {
+  margin-bottom: 15px;
+}/*# sourceMappingURL=style.css.map */

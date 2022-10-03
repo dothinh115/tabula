@@ -1,0 +1,267 @@
+//GLOBAL 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+    //COLOR
+    $purple-color: #b61984;
+    $dark-color: #181818;
+    $white-color: #fff;
+    $teacher-list-bg: #dcd1f3;
+    
+    //FONT SIZE
+    $fs-normal: 16px;
+
+    // FONT-WEIGHT
+    $fw-400: 400;
+    $fw-600: 600;
+    $fw-700: 700;
+    $fw-800: 800;
+
+body {
+    position: relative;
+    background-color: $white-color;
+    line-height: 1.8rem;
+    font: {
+        family: 'Montserrat', sans-serif;
+        weight: $fw-400;
+        size: $fs-normal;
+    }
+}
+
+    //FONT MIXIN
+    @mixin font-set($size, $weight) {
+        font: {
+            size: $size;
+            weight: $weight;
+        }
+    }
+
+    //BACKGROUND MIXIN
+    @mixin bg-mixin($image, $position) {
+        position: absolute;
+        display: block;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-image: url($image);
+        background-position: $position;
+    }
+
+//HEADER 
+header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+// NAVBAR 
+$navbar-height: 90px;
+.navbar {
+    .navbar-collapse {
+        flex-grow: unset;
+        min-height: $navbar-height;
+        .navbar-nav {
+            .nav-item {
+                padding: 0 1rem;
+                .nav-link {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+            a {
+                line-height: $navbar-height;
+                @include font-set(.8rem, $fw-600);
+            }
+        }
+        .telButton {
+            display: inline-block;
+            width: 175px;
+            height: 45px;
+            line-height: 45px;
+            background-color: $purple-color;
+            text-align: center;
+            border-radius: 25px;
+            a {
+                color: $white-color;
+                font-size: .9rem;
+                text-decoration: none;
+            };
+            i {
+                color: $white-color;
+            }
+        }
+        a {
+            color: $dark-color;
+            text-decoration: none;
+        };
+        a:hover {
+            color: $purple-color;
+        };
+    }
+}
+
+//ABOUT US
+.aboutus {
+    position: relative;
+    background-image: url(../img/yellow_top_wave_01.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    @media (max-width: 600px) {
+        padding-top: 7rem;
+    }
+    @media (min-width: 600px) {
+        padding-top: 5rem;
+    }
+    .aboutInnerLeft {
+        h5 {
+            @include font-set(1.1rem, $fw-600);
+            color: $purple-color;
+        }
+        p {
+            @include font-set(3.5rem, $fw-700);
+            line-height: 3.5rem;
+        }
+    }
+    .aboutInnerRight {
+        img {
+            max-width: 100%;
+        }
+    }
+}
+
+.aboutus::after {
+    @include bg-mixin("../img/Violet_top_left_wave.png", left bottom);
+    z-index: -1;
+}
+
+//TEACHER LIST
+.teacherlist {
+    position: relative;
+    background-color: $teacher-list-bg;
+    padding-bottom: 15px;
+    .listItem {
+        z-index: 1;
+    }
+    .card {
+        margin-bottom: 2rem;
+        border-radius: 1rem;
+        overflow: hidden;
+        transition: all .5s ease .1s;
+        border: unset;
+        min-height: 362px;
+        .card-title {
+            @include font-set(.75rem, $fw-600);
+            color: $purple-color;
+            text-transform: uppercase;
+        }
+        .card-name {
+            @include font-set(1.4rem, $fw-700);
+        }
+        p {
+            font: {
+                family: "Roboto",Arial,Helvetica,sans-serif;
+                size: .9rem;
+            }
+            line-height: 1.5rem;
+            color: $dark-color;
+        }
+        img {
+            transition: all 1s;
+        }
+        img:hover {
+            transform: scale(105%);
+        }
+    }
+    .card:hover {
+        box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, .1);
+    }
+}
+
+.teacherlist::after {
+    @include bg-mixin("../img/Wave_White_bottom_right_shape_01.png", left bottom);
+}
+
+//FIND COURSE 
+.findcourse {
+    @mixin inputConfig {
+        width: 100%;
+        border-radius: 25px;
+        border: 1px solid rgba(0, 0, 0, .2);
+        @include font-set(.65rem, $fw-600);
+        padding-left: 25px;
+    }
+    .findLeft {
+        img {
+            max-width: 100%;
+        }
+    }
+    .findRight {
+        .findRightInner {
+            width: 80%;
+            margin: auto;
+            border-radius: 25px;
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, .1);
+            h1 {
+                @include font-set(2rem, $fw-700);
+                text-transform: capitalize;
+            }
+        }
+        .findForm {
+            max-width: 100%;
+            .formItem {
+                flex: 1 0 50%;
+                max-width: 49%;
+                input {
+                   @include inputConfig();
+                }
+                i {
+                    position: absolute;
+                    left: 8px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    display: block;
+                    color: $purple-color;
+                    font-size: .9rem;
+                }
+            }
+            .iconPosition {
+                select {
+                    @include inputConfig();
+                    height: 36px;
+                }
+                textarea {
+                    @include inputConfig();
+                    max-height: 90px;
+                }
+                i {
+                    position: absolute;
+                    left: 8px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    display: block;
+                    color: $purple-color;
+                    font-size: .9rem;
+                }
+
+                i:last-of-type {
+                    top: 10px;
+                    left: 10px;
+                    transform: unset;
+                }
+            }
+            div {
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
