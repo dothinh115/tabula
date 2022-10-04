@@ -54,6 +54,26 @@ body {
         background-position: $position;
     }
 
+    //BUTTON MIXIN
+    @mixin button($height) {
+        display: inline-block;
+        height: $height;
+        line-height: $height;
+        background-color: $purple-color;
+        text-align: center;
+        border-radius: 25px;
+        color: $white-color;
+        font-size: .9rem;
+        border: 1px solid $purple-color;
+        padding: 0 1rem;
+        outline: none;
+        transition: all .5s;
+        &:hover {
+            color: $purple-color;
+            background-color: $white-color;
+        }
+    }
+
 //HEADER 
 header {
     position: absolute;
@@ -66,11 +86,15 @@ header {
 
 // NAVBAR 
 $navbar-height: 90px;
+nav {
+    transition: height .5s;
+}
 .navbar {
     .navbar-collapse {
         flex-grow: unset;
         min-height: $navbar-height;
         .navbar-nav {
+            z-index: 2;
             .nav-item {
                 padding: 0 1rem;
                 .nav-link {
@@ -82,22 +106,14 @@ $navbar-height: 90px;
                 line-height: $navbar-height;
                 @include font-set(.8rem, $fw-600);
             }
+            @media (max-width:600px) {
+                background-color: $white-color;
+            }
         }
-        .telButton {
-            display: inline-block;
-            width: 175px;
-            height: 45px;
-            line-height: 45px;
-            background-color: $purple-color;
-            text-align: center;
-            border-radius: 25px;
-            a {
-                color: $white-color;
-                font-size: .9rem;
-                text-decoration: none;
-            };
-            i {
-                color: $white-color;
+        button {
+            @include button(45px);
+            @media (max-width: 600px) {
+                display: none;                
             }
         }
         a {
@@ -108,6 +124,23 @@ $navbar-height: 90px;
             color: $purple-color;
         };
     }
+    .socialIcon {
+        @media (max-width: 600px) {
+            display: none;                
+        }
+    }
+}
+
+.scrollShow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%!important;
+    z-index: 10;
+    background-color: $white-color;
+    border-bottom: 2px solid rgba(0, 0, 0, .1);
+    height: 2rem;
+    display: block;
 }
 
 //ABOUT US
@@ -193,12 +226,22 @@ $navbar-height: 90px;
 
 //FIND COURSE 
 .findcourse {
+    z-index: 1;
     @mixin inputConfig {
         width: 100%;
         border-radius: 25px;
         border: 1px solid rgba(0, 0, 0, .2);
         @include font-set(.65rem, $fw-600);
         padding-left: 25px;
+    }
+    @mixin iConfig {
+        position: absolute;
+        left: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        color: $purple-color;
+        font-size: .9rem;
     }
     .findLeft {
         img {
@@ -210,6 +253,7 @@ $navbar-height: 90px;
             width: 80%;
             margin: auto;
             border-radius: 25px;
+            background-color: $white-color;
             box-shadow: 1px 1px 10px rgba(0, 0, 0, .1);
             h1 {
                 @include font-set(2rem, $fw-700);
@@ -225,13 +269,7 @@ $navbar-height: 90px;
                    @include inputConfig();
                 }
                 i {
-                    position: absolute;
-                    left: 8px;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    display: block;
-                    color: $purple-color;
-                    font-size: .9rem;
+                    @include iConfig();
                 }
             }
             .iconPosition {
@@ -244,13 +282,7 @@ $navbar-height: 90px;
                     max-height: 90px;
                 }
                 i {
-                    position: absolute;
-                    left: 8px;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    display: block;
-                    color: $purple-color;
-                    font-size: .9rem;
+                    @include iConfig();
                 }
 
                 i:last-of-type {
@@ -263,5 +295,101 @@ $navbar-height: 90px;
                 margin-bottom: 15px;
             }
         }
+        button {
+            @include button(48px);
+            text-transform: uppercase;
+            padding: 0 3rem;
+        }
+    }
+}
+
+.findcourse::after {
+    @include bg-mixin("../img/accent_bottom_wave_01.png",  left bottom);
+    z-index: -1;
+}
+
+//FOOTER
+footer {
+    background-image: url(../img/footer_background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px;
+    color: $white-color;
+    .footerInner {
+        max-width: 80%;
+    }
+    .footerItem {
+        font-family: "Roboto", Arial, Helvetica, sans-serif;
+        button {
+            @include button(48px);
+            @include font-set(.9rem, $fw-600);
+            text-transform: uppercase;
+            family: 'Montserrat', sans-serif;
+            padding: 0 2rem;
+            background-color: $white-color;
+            color: $purple-color;
+            border: 1px solid $white-color;
+            &:hover {
+                background-color: $purple-color;
+                color: $white-color;
+            }
+        }
+        input {
+            @include font-set(.9rem, $fw-400);
+            text-align: center;
+            border: 1px solid $purple-color;
+            background-color: transparent;
+            border-radius: 25px;
+            color: $white-color;
+            height: 48px;
+            transition: all .5s;
+            &::placeholder {
+                color: $white-color;
+            }
+            &:focus {
+                border-color: $white-color;
+            }
+        }
+    }
+    h2 {
+        @include font-set(1.55rem, $fw-700);
+    }
+    ul {
+        margin: 2rem 0;
+        li {
+            list-style-type: none;
+            line-height: 2rem;
+            @include font-set(.9rem, $fw-400);
+            span {
+                padding-left: .3rem;
+            }
+        }
+    }
+    .footerSocial {
+        a {
+            color: $white-color;
+            margin: 0 .2rem;
+            text-decoration: none;
+
+        }
+    }
+
+    .footerQuickLinks {
+        a {
+            color: $white-color;
+            text-decoration: none;
+            border-bottom: 1px solid $purple-color;
+            @include font-set(.9rem, $fw-400);
+            line-height: 2rem;
+        }
+        a:hover {
+            opacity: .8;
+        }
+    }
+    @media (max-width: 600px) {
+        background-position: center;
+    }
+    @media (min-width: 600px) {
+        background-position: center;
     }
 }

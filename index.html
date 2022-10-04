@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- FONTAWESOME  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/brands.min.css"/>
     <!-- GOOGLE FONT  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,9 +18,9 @@
     <!-- MY STYLE  -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
-  <body>
-    <header class="container">
-        <nav class="navbar navbar-expand-lg justify-content-between p-0 m-0">
+  <body onscroll="scrollEvent();">
+    <header>
+        <nav class="container navbar navbar-expand-lg justify-content-between">
             <a href="#" class="navbar-brand">
                 <img src="./img/crest.png" alt="">
             </a>
@@ -48,10 +49,10 @@
                     <a class="nav-link" href="#">Elements</a>
                   </li>
                 </ul>
-                <div class="telButton mx-3">
-                    <i class="fa-solid fa-phone"></i>
-                    <a href="#">(+1) 555 234-8765</a>
-                </div>
+                <button>
+                  <i class="fa-solid fa-phone"></i>
+                  (+1) 555 234-8765
+                </button>
                 <div class="socialIcon">
                     <a href="#" class="mx-1">
                         <i class="fa-brands fa-twitter"></i>
@@ -168,7 +169,7 @@
             </div>
         </div>
     </section>
-    <section class="findcourse">
+    <section class="findcourse position-relative pb-4">
         <div class="container m-auto row align-items-center">
             <div class="col-lg-6 findLeft">
                 <img src="./img/conatct_inner.png" alt="">
@@ -200,12 +201,122 @@
                             <i class="fa-solid fa-message"></i>
                             <textarea cols="40" rows="10" placeholder="Message"></textarea>
                         </div>
+                        <div class="w-100">
+                          <button>
+                            send
+                          </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <footer></footer>
+    <footer class="pt-5">
+      <div class="m-auto row footerInner">
+        <div class="col-lg-3 col-sm-6 footerItem">
+          <h2>
+            Contact us
+          </h2>
+          <ul>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>
+                Franklin St, Greenpoint Ave
+              </span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <span>
+                +2342 5446 67
+              </span>
+            </li>
+            <li>
+              <i class="fa-regular fa-clock"></i>
+              <span>
+                Monday - Friday: 8 AM - 5 PM
+              </span>
+            </li>
+          </ul>
+          <div class="footerSocial">
+            <a href="#">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="#">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="#">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 footerItem">
+          <h2>
+            Quick Links
+          </h2>
+          <ul class="footerQuickLinks">
+            <li>
+              <a href="#">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Courses
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Schedule
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Blog
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-sm-6 footerItem">
+          <h2>
+            About
+          </h2>
+          <ul class="footerQuickLinks">
+            <li>
+              <a href="#">
+                About us
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Events
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Get Quotes
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-sm-6 footerItem">
+          <h2>
+            Newsletter
+          </h2>
+          <input type="text" placeholder="Your email" class="w-100">
+          <br>
+          <br>
+          <button class="w-100">Subcribe</button>
+        </div>
+      </div>
+    </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

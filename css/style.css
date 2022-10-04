@@ -23,9 +23,16 @@ header {
   z-index: 1;
 }
 
+nav {
+  transition: height 0.5s;
+}
+
 .navbar .navbar-collapse {
   flex-grow: unset;
   min-height: 90px;
+}
+.navbar .navbar-collapse .navbar-nav {
+  z-index: 2;
 }
 .navbar .navbar-collapse .navbar-nav .nav-item {
   padding: 0 1rem;
@@ -39,22 +46,33 @@ header {
   font-size: 0.8rem;
   font-weight: 600;
 }
-.navbar .navbar-collapse .telButton {
+@media (max-width: 600px) {
+  .navbar .navbar-collapse .navbar-nav {
+    background-color: #fff;
+  }
+}
+.navbar .navbar-collapse button {
   display: inline-block;
-  width: 175px;
   height: 45px;
   line-height: 45px;
   background-color: #b61984;
   text-align: center;
   border-radius: 25px;
-}
-.navbar .navbar-collapse .telButton a {
   color: #fff;
   font-size: 0.9rem;
-  text-decoration: none;
+  border: 1px solid #b61984;
+  padding: 0 1rem;
+  outline: none;
+  transition: all 0.5s;
 }
-.navbar .navbar-collapse .telButton i {
-  color: #fff;
+.navbar .navbar-collapse button:hover {
+  color: #b61984;
+  background-color: #fff;
+}
+@media (max-width: 600px) {
+  .navbar .navbar-collapse button {
+    display: none;
+  }
 }
 .navbar .navbar-collapse a {
   color: #181818;
@@ -62,6 +80,23 @@ header {
 }
 .navbar .navbar-collapse a:hover {
   color: #b61984;
+}
+@media (max-width: 600px) {
+  .navbar .socialIcon {
+    display: none;
+  }
+}
+
+.scrollShow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  z-index: 10;
+  background-color: #fff;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  height: 2rem;
+  display: block;
 }
 
 .aboutus {
@@ -165,6 +200,9 @@ header {
   background-position: left bottom;
 }
 
+.findcourse {
+  z-index: 1;
+}
 .findcourse .findLeft img {
   max-width: 100%;
 }
@@ -172,6 +210,7 @@ header {
   width: 80%;
   margin: auto;
   border-radius: 25px;
+  background-color: #fff;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
 }
 .findcourse .findRight .findRightInner h1 {
@@ -237,4 +276,148 @@ header {
 }
 .findcourse .findRight .findForm div {
   margin-bottom: 15px;
+}
+.findcourse .findRight button {
+  display: inline-block;
+  height: 48px;
+  line-height: 48px;
+  background-color: #b61984;
+  text-align: center;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 0.9rem;
+  border: 1px solid #b61984;
+  padding: 0 1rem;
+  outline: none;
+  transition: all 0.5s;
+  text-transform: uppercase;
+  padding: 0 3rem;
+}
+.findcourse .findRight button:hover {
+  color: #b61984;
+  background-color: #fff;
+}
+
+.findcourse::after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url("../img/accent_bottom_wave_01.png");
+  background-position: left bottom;
+  z-index: -1;
+}
+
+footer {
+  background-image: url(../img/footer_background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 500px;
+  color: #fff;
+}
+footer .footerInner {
+  max-width: 80%;
+}
+footer .footerItem {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+footer .footerItem button {
+  display: inline-block;
+  height: 48px;
+  line-height: 48px;
+  background-color: #b61984;
+  text-align: center;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 0.9rem;
+  border: 1px solid #b61984;
+  padding: 0 1rem;
+  outline: none;
+  transition: all 0.5s;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  family: "Montserrat", sans-serif;
+  padding: 0 2rem;
+  background-color: #fff;
+  color: #b61984;
+  border: 1px solid #fff;
+}
+footer .footerItem button:hover {
+  color: #b61984;
+  background-color: #fff;
+}
+footer .footerItem button:hover {
+  background-color: #b61984;
+  color: #fff;
+}
+footer .footerItem input {
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-align: center;
+  border: 1px solid #b61984;
+  background-color: transparent;
+  border-radius: 25px;
+  color: #fff;
+  height: 48px;
+  transition: all 0.5s;
+}
+footer .footerItem input::-moz-placeholder {
+  color: #fff;
+}
+footer .footerItem input:-ms-input-placeholder {
+  color: #fff;
+}
+footer .footerItem input::placeholder {
+  color: #fff;
+}
+footer .footerItem input:focus {
+  border-color: #fff;
+}
+footer h2 {
+  font-size: 1.55rem;
+  font-weight: 700;
+}
+footer ul {
+  margin: 2rem 0;
+}
+footer ul li {
+  list-style-type: none;
+  line-height: 2rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+footer ul li span {
+  padding-left: 0.3rem;
+}
+footer .footerSocial a {
+  color: #fff;
+  margin: 0 0.2rem;
+  text-decoration: none;
+}
+footer .footerQuickLinks a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #b61984;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 2rem;
+}
+footer .footerQuickLinks a:hover {
+  opacity: 0.8;
+}
+@media (max-width: 600px) {
+  footer {
+    background-position: center;
+  }
+}
+@media (min-width: 600px) {
+  footer {
+    background-position: center;
+  }
 }/*# sourceMappingURL=style.css.map */
