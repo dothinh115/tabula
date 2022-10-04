@@ -78,10 +78,10 @@ body {
 header {
     position: absolute;
     top: 0;
-    left: 50%;
+    left: 0;
     width: 100%;
-    transform: translateX(-50%);
     z-index: 1;
+    transition: all 1s;
 }
 
 // NAVBAR 
@@ -92,18 +92,12 @@ nav {
 .navbar {
     .navbar-collapse {
         flex-grow: unset;
-        min-height: $navbar-height;
         .navbar-nav {
             z-index: 2;
             .nav-item {
                 padding: 0 1rem;
-                .nav-link {
-                    height: 100%;
-                    width: 100%;
-                }
             }
-            a {
-                line-height: $navbar-height;
+            .nav-link {
                 @include font-set(.8rem, $fw-600);
             }
             @media (max-width:600px) {
@@ -135,12 +129,20 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%!important;
     z-index: 10;
     background-color: $white-color;
     border-bottom: 2px solid rgba(0, 0, 0, .1);
-    height: 2rem;
     display: block;
+    .navbar-brand {
+        visibility: hidden;
+        height: 0;
+    }
+    nav {
+        padding-top: 8px;
+        margin-top: 0;
+        margin: auto;
+        height: 3rem;
+    }
 }
 
 //ABOUT US
